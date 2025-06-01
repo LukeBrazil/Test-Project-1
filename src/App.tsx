@@ -1,8 +1,13 @@
-import UserForm from './UserForm'
+import Navbar from './components/Navbar'
+import Hero from './components/Hero'
+import './App.css'
 
 function App() {
   return (
-    <UserForm />
+    <div className="app">
+      <Navbar />
+      <Hero />
+    </div>
   )
 }
 
