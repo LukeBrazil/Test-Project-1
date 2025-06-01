@@ -10,12 +10,14 @@
   left: 0;
   right: 0;
   z-index: 1000;
+  height: 60px; /* Fixed height for navbar */
 }
 
-.nav-left, .nav-right {
+.nav-container {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 2rem;
+  width: 100%;
 }
 
 .logo {
@@ -26,16 +28,23 @@
 .logo-text {
   font-size: 1.5rem;
   font-weight: 600;
-  color: #00a82d;
+  color: #00a82d; /* ZipTask Green */
+  text-decoration: none;
 }
 
-.nav-links {
+.nav-menu {
   display: flex;
+  align-items: center;
   gap: 2rem;
-  margin-left: 2rem;
 }
 
-.nav-links a {
+.nav-links, .nav-right {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem; /* Adjusted gap */
+}
+
+.nav-links a, .nav-right a {
   text-decoration: none;
   color: #737373;
   font-size: 0.875rem;
@@ -43,23 +52,12 @@
   transition: color 0.2s ease;
 }
 
-.nav-links a:hover {
-  color: #00a82d;
-}
-
-.nav-right a {
-  text-decoration: none;
-  color: #737373;
-  font-size: 0.875rem;
-  transition: color 0.2s ease;
-}
-
-.nav-right a:hover {
+.nav-links a:hover, .nav-right a:hover {
   color: #00a82d;
 }
 
 .nav-login-btn {
-  background-color: #007bff;
+  background-color: #007bff; /* Blue */
   color: white !important;
   border: none;
   padding: 0.5rem 1rem;
@@ -72,6 +70,95 @@
 }
 
 .nav-login-btn:hover {
-  background-color: #0056b3;
+  background-color: #0056b3; /* Darker Blue */
   color: white !important;
+}
+
+.hamburger {
+  display: none; /* Hidden by default */
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.hamburger-bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  border-radius: 3px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .nav-menu {
+    position: absolute;
+    top: 60px; /* Below navbar */
+    left: 0;
+    right: 0;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem 2rem;
+    gap: 1rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+  }
+
+  .nav-menu.open {
+    max-height: 500px; /* Adjust as needed to fit content */
+    padding-bottom: 1.5rem;
+  }
+
+  .nav-links, .nav-right {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    gap: 1rem;
+  }
+
+  .nav-links a, .nav-right a {
+    padding: 0.5rem 0;
+    width: 100%;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  .nav-links a:last-child, .nav-right a:last-child {
+    border-bottom: none;
+  }
+
+  .nav-login-btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .hamburger {
+    display: flex; /* Show hamburger on mobile */
+  }
+
+  /* Hamburger animation when open */
+  .nav-menu.open + .nav-container .hamburger-bar:nth-child(1) { /* This selector might need adjustment based on final DOM structure */
+    transform: translateY(8px) rotate(45deg);
+  }
+  .nav-menu.open + .nav-container .hamburger-bar:nth-child(2) {
+    opacity: 0;
+  }
+  .nav-menu.open + .nav-container .hamburger-bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+  /* If the above hamburger animation doesn't work due to DOM structure, we can animate bars directly based on a class on the hamburger button itself */
+ .hamburger.open .hamburger-bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .hamburger.open .hamburger-bar:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.open .hamburger-bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
 } 

@@ -130,4 +130,45 @@
 .login-links span {
   margin: 0 0.5rem;
   color: #aaa;
+}
+
+/* Mobile Styles for Login Page */
+@media (max-width: 768px) {
+  .login-page-container {
+    padding-top: 80px; /* Adjust if navbar height changes on mobile */
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .login-form-container {
+    padding: 2rem; /* Reduce padding */
+    margin-top: 1rem; /* Add some margin if needed */
+    margin-bottom: 1rem;
+  }
+
+  .login-form-container h2 {
+    font-size: 1.5rem;
+  }
+
+  .login-form label {
+    font-size: 0.8rem;
+  }
+
+  .login-form input {
+    padding: 0.7rem 0.9rem;
+    font-size: 0.9rem;
+  }
+
+  .login-btn {
+    padding: 0.7rem;
+    font-size: 0.9rem;
+  }
+
+  .login-links {
+    font-size: 0.8rem;
+  }
+
+  .or-divider span {
+    font-size: 0.8rem;
+  }
 } 

@@ -72,4 +72,35 @@
 body {
   margin: 0;
   padding: 0;
+}
+
+/* Mobile Styles for UserForm */
+@media (max-width: 768px) {
+  .form-container {
+    padding-top: 80px; /* Adjust if navbar height changes on mobile */
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .user-form {
+    padding: 1.5rem; /* Reduce padding on smaller screens */
+  }
+
+  .user-form h2 {
+    font-size: 1.5rem; /* Smaller heading */
+  }
+
+  .form-group label {
+    font-size: 0.9rem;
+  }
+
+  .form-group input {
+    padding: 0.65rem;
+    font-size: 0.9rem;
+  }
+
+  .submit-button {
+    padding: 0.65rem;
+    font-size: 0.9rem;
+  }
 } 
