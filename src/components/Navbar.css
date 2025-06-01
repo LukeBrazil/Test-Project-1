@@ -59,7 +59,7 @@
 }
 
 .nav-login-btn {
-  background-color: #00a82d;
+  background-color: #007bff;
   color: white !important;
   border: none;
   padding: 0.5rem 1rem;
@@ -72,6 +72,6 @@
 }
 
 .nav-login-btn:hover {
-  background-color: #008f26;
+  background-color: #0056b3;
   color: white !important;
 } 
