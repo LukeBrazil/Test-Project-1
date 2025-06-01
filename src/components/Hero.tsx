@@ -1,4 +1,5 @@
 import './Hero.css';
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
   return (
@@ -6,8 +7,10 @@ const Hero = () => {
       <div className="hero-content">
         <h1>Accomplish more with better tasks</h1>
         <p>Zip Task helps you capture tasks and get them done fast.</p>
-        <button className="signup-btn">Sign up for free</button>
-        <a href="#login" className="login-link">Already have an account? Log in</a>
+        <Link to="/login" className="signup-btn">
+          Sign up for free
+        </Link>
+        
       </div>
       <div className="hero-image">
         <img 

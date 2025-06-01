@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import UserForm from './UserForm'
+import Login from './components/Login'
 import './App.css'
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Hero />} />
           <Route path="/form" element={<UserForm />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
       </div>
     </Router>
